@@ -20,6 +20,8 @@
 		583249EE97405B8B210832F9 /* Pods_Movies_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC5581BC52F8F94260060F4 /* Pods_Movies_AppTests.framework */; };
 		5860A9FD2881C5D400BBF6AB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860A9FC2881C5D400BBF6AB /* HomeTableViewCell.swift */; };
 		58880412288325D500A8FE91 /* HeadHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58880411288325D500A8FE91 /* HeadHomeView.swift */; };
+		589BF490289E7B5100EDB3EB /* CommingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BF48F289E7B5100EDB3EB /* CommingSoonViewController.swift */; };
+		589BF493289E7CD400EDB3EB /* commingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BF492289E7CD400EDB3EB /* commingTableViewCell.swift */; };
 		58A2024D28823CFE00B71554 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */; };
 		58BACF9328895E190015E727 /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BACF9228895E190015E727 /* viewModel.swift */; };
 		58C2A27A2888AC020056A72D /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A2792888AC020056A72D /* APICaller.swift */; };
@@ -63,6 +65,8 @@
 		5804C707287F95DD0028FE06 /* Movies_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5860A9FC2881C5D400BBF6AB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		58880411288325D500A8FE91 /* HeadHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadHomeView.swift; sourceTree = "<group>"; };
+		589BF48F289E7B5100EDB3EB /* CommingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonViewController.swift; sourceTree = "<group>"; };
+		589BF492289E7CD400EDB3EB /* commingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commingTableViewCell.swift; sourceTree = "<group>"; };
 		58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		58BACF9228895E190015E727 /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
 		58C2A2792888AC020056A72D /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 		5860A9F92881C19D00BBF6AB /* Coming Soon */ = {
 			isa = PBXGroup;
 			children = (
+				589BF491289E7C5F00EDB3EB /* Coming Soon View */,
 			);
 			path = "Coming Soon";
 			sourceTree = "<group>";
@@ -211,6 +216,15 @@
 				58C2A27B2888B0BF0056A72D /* Model.swift */,
 			);
 			path = "Home Model";
+			sourceTree = "<group>";
+		};
+		589BF491289E7C5F00EDB3EB /* Coming Soon View */ = {
+			isa = PBXGroup;
+			children = (
+				589BF48F289E7B5100EDB3EB /* CommingSoonViewController.swift */,
+				589BF492289E7CD400EDB3EB /* commingTableViewCell.swift */,
+			);
+			path = "Coming Soon View";
 			sourceTree = "<group>";
 		};
 		58A2024B288239BD00B71554 /* Collection Cell */ = {
@@ -489,10 +503,12 @@
 				58880412288325D500A8FE91 /* HeadHomeView.swift in Sources */,
 				5804C6E2287F95DC0028FE06 /* AppDelegate.swift in Sources */,
 				5804C6EC287F95DC0028FE06 /* Movies_App.xcdatamodeld in Sources */,
+				589BF493289E7CD400EDB3EB /* commingTableViewCell.swift in Sources */,
 				5804C6E4287F95DC0028FE06 /* SceneDelegate.swift in Sources */,
 				58A2024D28823CFE00B71554 /* HomeCollectionViewCell.swift in Sources */,
 				58BACF9328895E190015E727 /* viewModel.swift in Sources */,
 				58C2A27A2888AC020056A72D /* APICaller.swift in Sources */,
+				589BF490289E7B5100EDB3EB /* CommingSoonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

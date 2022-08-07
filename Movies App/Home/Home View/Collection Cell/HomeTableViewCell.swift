@@ -15,7 +15,7 @@ class HomeTableViewCell: UITableViewCell{
     @IBOutlet var collectionView:UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+    
         collectionView.delegate=self
         collectionView.dataSource=self
         viewModel=ViewModel()

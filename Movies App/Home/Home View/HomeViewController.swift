@@ -64,14 +64,6 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
        30
     }
    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      print(indexPath)
-        print(indexPath.section)
-    }
-    
-    
-
-   
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section{

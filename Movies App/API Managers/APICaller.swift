@@ -65,6 +65,16 @@ class APICaller{
         
     }
    
- 
+ //https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate
+    func getTopSearch(complition:@escaping ([Movie])->Void){
+        guard let url=URL(string: "\(constant.baseUrl)/3/movie/popular?api_key=\(constant.apiKey)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate")else {return}
+        AF.request(url).responseDecodable(of:TrendingMoviesReponse.self){
+                    response in
+                    guard let data=response.value else{return}
+         
+            complition(data.results)
+                }
+        
+    }
     
 }

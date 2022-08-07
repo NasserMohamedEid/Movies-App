@@ -37,6 +37,11 @@ class ViewModel {
             bindResultToHomeView()
         }
     }
+    var resultTopSearch : [Movie]?{
+        didSet{
+            bindResultToHomeView()
+        }
+    }
     
     
     
@@ -66,4 +71,8 @@ class ViewModel {
                         self.resultPopular=result
         }}
 
+    func getTopSearch(){
+                    APICaller.shared.getPopular { result in
+                        self.resultTopSearch=result
+        }}
 }
