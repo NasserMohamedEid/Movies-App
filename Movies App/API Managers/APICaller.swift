@@ -76,5 +76,15 @@ class APICaller{
                 }
         
     }
+    func getSearch(name:String,complition:@escaping ([Movie])->Void){
+        guard let url=URL(string: "\(constant.baseUrl)/3/search/movie?api_key=\(constant.apiKey)&query=\(name)")else {return}
+        AF.request(url).responseDecodable(of:TrendingMoviesReponse.self){
+                    response in
+                    guard let data=response.value else{return}
+         
+            complition(data.results)
+                }
+        
+    }
     
 }
