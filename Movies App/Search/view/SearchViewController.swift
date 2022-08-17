@@ -8,7 +8,8 @@
 import UIKit
 import SDWebImage
 class SearchViewController: UIViewController ,UISearchBarDelegate{
-
+    
+    var ids:videoElement?
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searhTableView: UITableView!
     var movie:[Movie]=[]
@@ -53,6 +54,11 @@ extension SearchViewController:UITableViewDelegate,UITableViewDataSource{
         header.textLabel?.textColor = .white
         header.textLabel?.font = .systemFont(ofSize: 30)
         header.sizeToFit()
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let secondvc=self.storyboard?.instantiateViewController(withIdentifier: "DetailsMovieViewController") as! DetailsMovieViewController
+        secondvc.movie=movie[indexPath.row]
+        self.navigationController?.pushViewController(secondvc, animated: true)
     }
 //MARK: - Searc bar config
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

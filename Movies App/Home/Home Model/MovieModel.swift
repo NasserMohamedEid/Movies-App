@@ -12,6 +12,8 @@ struct TrendingMoviesReponse:Decodable{
 struct Movie:Decodable{
     let id:Int?
     let original_title:String?
+    let original_name:String?
+    let title:String?
     let media_type:String?
     let overview:String?
     let poster_path:String?

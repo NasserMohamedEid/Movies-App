@@ -7,7 +7,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController{
+    func sendd(movie:Movie) {
+        print("asdasdasdsaffdfsdsdsdfsdfsd")
+        print("asdasdasdsaffdfsdsdsdfsdfsd")
+        print("asdasdasdsaffdfsdsdsdfsdfsd")
+        print("asdasdasdsaffdfsdsdsdfsdfsd")
+        let secondvc=self.storyboard?.instantiateViewController(withIdentifier: "DetailsMovieViewController") as! DetailsMovieViewController
+        secondvc.movie=movie
+        self.navigationController?.pushViewController(secondvc, animated: true)
+    }
+   
+
+    var homeTableViewcel:HomeTableViewCell?
     @IBOutlet weak var homeTableView: UITableView!
     
     @IBOutlet weak var headViewImage: UIImageView!
@@ -24,9 +36,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHead()
-        
-        
-        }
+        homeTableViewcel=HomeTableViewCell()
+       
+    }
     
     
     func setupHead(){
@@ -54,7 +66,10 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = homeTableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell else {return UITableViewCell()}
         cell.collectionView.tag=indexPath.section
-        
+        cell.onklick={movie in
+            self.sendd(movie: movie)
+            
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,4 +96,9 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         header.textLabel?.font = .systemFont(ofSize: 18)
         
     }
+
+   
 }
+protocol firstProtocol{
+       func send()
+   }

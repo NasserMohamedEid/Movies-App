@@ -47,7 +47,11 @@ class ViewModel {
             bindResultToHomeView()
         }
     }
-
+    var resultMovie: [videoElement]?{
+        didSet{
+            bindResultToHomeView()
+        }
+    }
     
     
     
@@ -84,6 +88,11 @@ class ViewModel {
     func getSearch(name:String){
         APICaller.shared.getSearch(name: name) { result in
             self.resultSearch=result
+        }
+        }
+    func getMovie(name:String){
+        APICaller.shared.getmovie(name: name) { result in
+            self.resultMovie=result
         }
         }
 }
