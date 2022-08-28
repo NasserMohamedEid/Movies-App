@@ -27,6 +27,7 @@ var homeViewController:HomeViewController?
                 [weak self]in
                 DispatchQueue.main.async {
                 self?.collectionView.reloadData()
+                    print(self?.viewModel.resultUpcoming)
                     }
              }
         getmovie()
@@ -41,7 +42,7 @@ var homeViewController:HomeViewController?
         case 1:
             y=1
             x=2
-            viewModel.getUpcomingMovie()
+            viewModel.getTrendingTVs()
             
             break
         case 2:x=3
@@ -56,7 +57,7 @@ var homeViewController:HomeViewController?
             break
         default:
             y=4
-            viewModel.getTrendingTVs()
+            viewModel.getUpcomingMovie()
             
             break
         }
@@ -73,7 +74,7 @@ var homeViewController:HomeViewController?
         switch collectionView.tag{
         case 0:movie=viewModel.result?[indexPath.row]
             break
-        case 1:movie=viewModel.resultUpcoming?[indexPath.row]
+        case 1:movie=viewModel.resultTv?[indexPath.row]
             
             break
         case 2:movie=viewModel.resultTop?[indexPath.row]
@@ -81,8 +82,8 @@ var homeViewController:HomeViewController?
             break
         case 3:movie=viewModel.resultPopular?[indexPath.row]
             break
-        default:
-            movie=viewModel.resultTv?[indexPath.row]
+        default:movie=viewModel.resultUpcoming?[indexPath.row]
+            
 break
         }
         onklick?(movie!)
@@ -94,10 +95,10 @@ extension HomeTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
         if y==0{
         return viewModel.result?.count ?? 0
         }
-        else if y==1{return viewModel.resultUpcoming?.count ?? 0}
+        else if y==1{return viewModel.resultTv?.count ?? 0}
         else if y==2{return viewModel.resultTop?.count ?? 0}
         else if y==3{return viewModel.resultPopular?.count ?? 0}
-        else{return viewModel.resultTv?.count ?? 0}
+        else{return viewModel.resultUpcoming?.count ?? 0}
 
     }
     
@@ -109,7 +110,7 @@ extension HomeTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
             
             cell.movieImage.sd_setImage(with:URL(string: "https://image.tmdb.org/t/p/w500\(url)"))
             return cell
-        case 1:let url:String=viewModel.resultUpcoming?[indexPath.row].poster_path ?? ""
+        case 1:let url:String=viewModel.resultTv?[indexPath.row].poster_path ?? ""
             cell.movieImage.sd_setImage(with:URL(string: "https://image.tmdb.org/t/p/w500\(url)"))
             return cell
         case 2:let url:String=viewModel.resultTop?[indexPath.row].poster_path ?? ""
@@ -119,8 +120,8 @@ extension HomeTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
         case 3:let url:String=viewModel.resultPopular?[indexPath.row].poster_path ?? ""
             cell.movieImage.sd_setImage(with:URL(string: "https://image.tmdb.org/t/p/w500\(url)"))
             return cell
-        default:let url:String=viewModel.resultTv?[indexPath.row].poster_path ?? ""
-                        cell.movieImage.sd_setImage(with:URL(string: "https://image.tmdb.org/t/p/w500\(url)"))
+        default:let url:String=viewModel.resultUpcoming?[indexPath.row].poster_path ?? ""
+            cell.movieImage.sd_setImage(with:URL(string: "https://image.tmdb.org/t/p/w500\(url)"))
                         return cell
         }
         
@@ -130,33 +131,47 @@ extension HomeTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
         return CGSize(width: 140, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+      
         let config=UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { result in
-            let downloadAction=UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
-                let movie:Movie?
-                switch collectionView.tag{
-                case 0:movie=self.viewModel.result?[indexPath.row]
-                    break
-                case 1:movie=self.viewModel.resultUpcoming?[indexPath.row]
-                    
-                    break
-                case 2:movie=self.viewModel.resultTop?[indexPath.row]
-                    
-                    break
-                case 3:movie=self.viewModel.resultPopular?[indexPath.row]
-                    break
-                default:
-                    movie=self.viewModel.resultTv?[indexPath.row]
-        break
-                }
+            let downloadAction=UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] _ in
                 
+                let movie:Movie?
+                      switch collectionView.tag{
+                      case 0:movie=self?.viewModel.result?[indexPath.row]
+                                                  break
+                      case 1:movie=self?.viewModel.resultTv?[indexPath.row]
+                                                  
+                                                  break
+                      case 2:movie=self?.viewModel.resultTop?[indexPath.row]
+                                                  
+                                                  break
+                      case 3:movie=self?.viewModel.resultPopular?[indexPath.row]
+                                                  break
+                                              default:
+                          movie=self?.viewModel.resultUpcoming?[indexPath.row]
+                                      break
+                      }
+                self?.downloadmovie(movie: movie)
             }
-            
-          
             return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
         }
-      
+        
+       
+    
+
         return config
     }
-   
+    private func downloadmovie(movie:Movie?){
+        DataPersistenceManager.shared.downloadTitle(model: movie) { result in
+            switch result{
+            case.success():
+                print("download sucsses")
+                break
+            case.failure(let error):
+                print(error.localizedDescription)
+                break
+            }
+        }
+    }
 
 }

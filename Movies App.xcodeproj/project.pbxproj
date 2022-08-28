@@ -23,6 +23,9 @@
 		589BF490289E7B5100EDB3EB /* CommingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BF48F289E7B5100EDB3EB /* CommingSoonViewController.swift */; };
 		589BF493289E7CD400EDB3EB /* commingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BF492289E7CD400EDB3EB /* commingTableViewCell.swift */; };
 		58A2024D28823CFE00B71554 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */; };
+		58ABECBF28B6387A00F1E91F /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABECBE28B6387A00F1E91F /* DownloadViewController.swift */; };
+		58ABECC128B639E500F1E91F /* DownloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABECC028B639E500F1E91F /* DownloadTableViewCell.swift */; };
+		58AF026F28B57AA000FCF1A8 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF026E28B57AA000FCF1A8 /* DataPersistenceManager.swift */; };
 		58B046DE28A55D1100934A2E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B046DD28A55D1100934A2E /* SearchViewController.swift */; };
 		58B046E028A560A100934A2E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B046DF28A560A100934A2E /* SearchTableViewCell.swift */; };
 		58BACF9328895E190015E727 /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BACF9228895E190015E727 /* viewModel.swift */; };
@@ -72,6 +75,9 @@
 		589BF48F289E7B5100EDB3EB /* CommingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonViewController.swift; sourceTree = "<group>"; };
 		589BF492289E7CD400EDB3EB /* commingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commingTableViewCell.swift; sourceTree = "<group>"; };
 		58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		58ABECBE28B6387A00F1E91F /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		58ABECC028B639E500F1E91F /* DownloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTableViewCell.swift; sourceTree = "<group>"; };
+		58AF026E28B57AA000FCF1A8 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		58B046DD28A55D1100934A2E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		58B046DF28A560A100934A2E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		58BACF9228895E190015E727 /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
@@ -152,8 +158,9 @@
 		5804C6E0287F95DC0028FE06 /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				58ABECBD28B637F500F1E91F /* download */,
 				58C56A8228AA826C002F0731 /* Details Movie */,
-				58C2A2782888ABB00056A72D /* API Managers */,
+				58C2A2782888ABB00056A72D /* Managers */,
 				58B046D728A5586F00934A2E /* Search */,
 				5860A9F92881C19D00BBF6AB /* Coming Soon */,
 				5860A9F72881C15900BBF6AB /* Home */,
@@ -198,7 +205,6 @@
 		5860A9F82881C17600BBF6AB /* Home View */ = {
 			isa = PBXGroup;
 			children = (
-				5804C6E5287F95DC0028FE06 /* HomeViewController.swift */,
 				58A2024B288239BD00B71554 /* Collection Cell */,
 			);
 			path = "Home View";
@@ -241,11 +247,21 @@
 		58A2024B288239BD00B71554 /* Collection Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5804C6E5287F95DC0028FE06 /* HomeViewController.swift */,
 				5860A9FC2881C5D400BBF6AB /* HomeTableViewCell.swift */,
 				58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */,
 				58880411288325D500A8FE91 /* HeadHomeView.swift */,
 			);
 			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		58ABECBD28B637F500F1E91F /* download */ = {
+			isa = PBXGroup;
+			children = (
+				58ABECBE28B6387A00F1E91F /* DownloadViewController.swift */,
+				58ABECC028B639E500F1E91F /* DownloadTableViewCell.swift */,
+			);
+			path = download;
 			sourceTree = "<group>";
 		};
 		58B046D728A5586F00934A2E /* Search */ = {
@@ -265,12 +281,13 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		58C2A2782888ABB00056A72D /* API Managers */ = {
+		58C2A2782888ABB00056A72D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				58C2A2792888AC020056A72D /* APICaller.swift */,
+				58AF026E28B57AA000FCF1A8 /* DataPersistenceManager.swift */,
 			);
-			path = "API Managers";
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		58C56A8228AA826C002F0731 /* Details Movie */ = {
@@ -545,11 +562,14 @@
 				58C2A27C2888B0BF0056A72D /* MovieModel.swift in Sources */,
 				5804C6E6287F95DC0028FE06 /* HomeViewController.swift in Sources */,
 				5860A9FD2881C5D400BBF6AB /* HomeTableViewCell.swift in Sources */,
+				58ABECBF28B6387A00F1E91F /* DownloadViewController.swift in Sources */,
 				58C56A8128AA766E002F0731 /* youtubeModel.swift in Sources */,
 				58880412288325D500A8FE91 /* HeadHomeView.swift in Sources */,
 				5804C6E2287F95DC0028FE06 /* AppDelegate.swift in Sources */,
 				5804C6EC287F95DC0028FE06 /* Movies_App.xcdatamodeld in Sources */,
 				589BF493289E7CD400EDB3EB /* commingTableViewCell.swift in Sources */,
+				58ABECC128B639E500F1E91F /* DownloadTableViewCell.swift in Sources */,
+				58AF026F28B57AA000FCF1A8 /* DataPersistenceManager.swift in Sources */,
 				5804C6E4287F95DC0028FE06 /* SceneDelegate.swift in Sources */,
 				58B046DE28A55D1100934A2E /* SearchViewController.swift in Sources */,
 				58A2024D28823CFE00B71554 /* HomeCollectionViewCell.swift in Sources */,

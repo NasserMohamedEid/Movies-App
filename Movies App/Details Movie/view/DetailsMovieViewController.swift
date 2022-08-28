@@ -9,6 +9,19 @@ import UIKit
 import youtube_ios_player_helper
 class DetailsMovieViewController: UIViewController{
 
+
+    @IBAction func downloadButton(_ sender: UIButton) {
+        DataPersistenceManager.shared.downloadTitle(model: movie) { result in
+            switch result{
+            case.success():
+                print("download sucsses")
+                break
+            case.failure(let error):
+                print(error.localizedDescription)
+                break
+            }
+        }
+    }
     @IBOutlet weak var MovieName: UILabel!
     var movie:Movie?
     var youtube:videoElement?

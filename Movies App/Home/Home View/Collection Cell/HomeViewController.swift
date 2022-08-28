@@ -9,10 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController{
     func sendd(movie:Movie) {
-        print("asdasdasdsaffdfsdsdsdfsdfsd")
-        print("asdasdasdsaffdfsdsdsdfsdfsd")
-        print("asdasdasdsaffdfsdsdsdfsdfsd")
-        print("asdasdasdsaffdfsdsdsdfsdfsd")
+       
         let secondvc=self.storyboard?.instantiateViewController(withIdentifier: "DetailsMovieViewController") as! DetailsMovieViewController
         secondvc.movie=movie
         self.navigationController?.pushViewController(secondvc, animated: true)
@@ -35,21 +32,13 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupHead()
+        
+        headViewImage.image=UIImage(named: "dune")
         homeTableViewcel=HomeTableViewCell()
        
     }
     
-    
-    func setupHead(){
-        headViewImage.image=UIImage(named: "dune")
-        playButton.layer.borderWidth=1
-        playButton.layer.borderColor=UIColor.white.cgColor
-        downloadButton.layer.borderWidth=1
-        downloadButton.layer.borderColor=UIColor.white.cgColor
-      
-        
-    }
+  
     
 }
 
@@ -99,6 +88,4 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
 
    
 }
-protocol firstProtocol{
-       func send()
-   }
+

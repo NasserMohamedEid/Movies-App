@@ -16,7 +16,7 @@ class SearchViewController: UIViewController ,UISearchBarDelegate{
     var viewModel:ViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+title="Search"
         searchBar.delegate=self
         viewModel=ViewModel()
         viewModel.bindResultToHomeView={
@@ -46,9 +46,7 @@ extension SearchViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "Search"
-    }
+   
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header=view as?UITableViewHeaderFooterView else{return}
         header.textLabel?.textColor = .white

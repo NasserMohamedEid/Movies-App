@@ -12,6 +12,7 @@ class CommingSoonViewController: UIViewController {
     @IBOutlet weak var commingTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title="Comming Soon"
         viewModel=ViewModel()
         viewModel.bindResultToHomeView={
                 [weak self]in
@@ -39,14 +40,16 @@ extension CommingSoonViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "UPcoming"
-    }
+   
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header=view as?UITableViewHeaderFooterView else{return}
         header.textLabel?.textColor = .white
         header.textLabel?.font = .systemFont(ofSize: 30)
         header.sizeToFit()
     }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let secondvc=self.storyboard?.instantiateViewController(withIdentifier: "DetailsMovieViewController") as! DetailsMovieViewController
+        secondvc.movie=viewModel.resultUpcoming?[indexPath.row]
+        self.navigationController?.pushViewController(secondvc, animated: true)
+    }
 }
