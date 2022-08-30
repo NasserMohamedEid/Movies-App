@@ -306,15 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-aC-EWO" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="228"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="228" id="bXk-j9-zNh"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-Oi-SkV">
-                                <rect key="frame" x="20" y="302" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="332" width="374" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -332,8 +325,24 @@
                                     <action selector="downloadButton:" destination="NlP-W3-Avv" eventType="touchUpInside" id="wwz-V3-nKy"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-cN-egm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="258"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-aC-EWO" customClass="YTPlayerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ILT-aC-EWO" secondAttribute="bottom" id="0ch-NJ-okq"/>
+                                    <constraint firstItem="ILT-aC-EWO" firstAttribute="leading" secondItem="Gep-cN-egm" secondAttribute="leading" id="RfG-Mp-Dpm"/>
+                                    <constraint firstAttribute="trailing" secondItem="ILT-aC-EWO" secondAttribute="trailing" id="hF0-96-t6M"/>
+                                    <constraint firstItem="ILT-aC-EWO" firstAttribute="top" secondItem="Gep-cN-egm" secondAttribute="top" id="mXK-ys-EfK"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJb-Dr-8qe">
-                                <rect key="frame" x="20" y="381" width="374" height="28"/>
+                                <rect key="frame" x="20" y="393" width="374" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -342,28 +351,23 @@
                         <viewLayoutGuide key="safeArea" id="ERT-hp-Yl7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="top" secondItem="ERT-hp-Yl7" secondAttribute="top" id="4ao-Aq-jaB"/>
-                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ILT-aC-EWO" secondAttribute="bottom" constant="590" id="6ZH-tZ-bQ2"/>
                             <constraint firstItem="PJb-Dr-8qe" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" constant="20" id="ASP-Oa-5PC"/>
-                            <constraint firstItem="PJb-Dr-8qe" firstAttribute="top" secondItem="8Ht-Hf-5tx" secondAttribute="top" constant="381" id="BNs-Us-4VX"/>
+                            <constraint firstItem="PJb-Dr-8qe" firstAttribute="top" secondItem="8Ht-Hf-5tx" secondAttribute="top" constant="393" id="BNs-Us-4VX"/>
                             <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Nxe-t1-oHT" secondAttribute="bottom" constant="305" id="CDq-Sb-871"/>
                             <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="PJb-Dr-8qe" secondAttribute="bottom" constant="453" id="E6z-26-Ou3"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="top" secondItem="ERT-hp-Yl7" secondAttribute="top" id="ExM-Gc-QGD"/>
+                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Gep-cN-egm" secondAttribute="bottom" constant="560" id="ENJ-9i-ahX"/>
+                            <constraint firstItem="Wyh-Oi-SkV" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" constant="20" id="Mwx-79-ZPQ"/>
                             <constraint firstItem="Nxe-t1-oHT" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" constant="142" id="TZ8-g6-ZM2"/>
-                            <constraint firstItem="Wyh-Oi-SkV" firstAttribute="top" secondItem="ILT-aC-EWO" secondAttribute="bottom" constant="30" id="bku-ho-Yf1"/>
+                            <constraint firstItem="Gep-cN-egm" firstAttribute="top" secondItem="ERT-hp-Yl7" secondAttribute="top" id="YpL-Ot-kzE"/>
+                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Wyh-Oi-SkV" secondAttribute="bottom" constant="534.5" id="bKY-qT-ci3"/>
+                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="trailing" secondItem="Wyh-Oi-SkV" secondAttribute="trailing" constant="20" id="biM-4C-hDQ"/>
+                            <constraint firstItem="Gep-cN-egm" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" id="bjn-1B-WMC"/>
                             <constraint firstItem="ERT-hp-Yl7" firstAttribute="trailing" secondItem="PJb-Dr-8qe" secondAttribute="trailing" constant="20" id="c6z-6c-bJ6"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" id="dRP-Iw-g1v"/>
-                            <constraint firstItem="Nxe-t1-oHT" firstAttribute="top" secondItem="PJb-Dr-8qe" secondAttribute="bottom" constant="91" id="kiB-7w-BHj"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" id="kqw-ga-kfA"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="trailing" secondItem="ERT-hp-Yl7" secondAttribute="trailing" id="lrc-We-GRN"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="trailing" secondItem="ERT-hp-Yl7" secondAttribute="trailing" id="mdZ-tW-7CZ"/>
+                            <constraint firstItem="Nxe-t1-oHT" firstAttribute="top" secondItem="PJb-Dr-8qe" secondAttribute="bottom" constant="79" id="kiB-7w-BHj"/>
+                            <constraint firstItem="Wyh-Oi-SkV" firstAttribute="top" secondItem="Gep-cN-egm" secondAttribute="bottom" constant="30" id="let-k4-1oG"/>
                             <constraint firstItem="ERT-hp-Yl7" firstAttribute="trailing" secondItem="Nxe-t1-oHT" secondAttribute="trailing" constant="142" id="oUi-8G-39G"/>
-                            <constraint firstItem="Wyh-Oi-SkV" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" constant="20" id="q1z-my-jAw"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" id="qdm-Ol-IuS"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="top" secondItem="ERT-hp-Yl7" secondAttribute="top" id="rU5-pI-ajc"/>
-                            <constraint firstItem="ILT-aC-EWO" firstAttribute="trailing" secondItem="ERT-hp-Yl7" secondAttribute="trailing" id="rfw-Xm-hC3"/>
-                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="trailing" secondItem="Wyh-Oi-SkV" secondAttribute="trailing" constant="20" id="uIW-OK-gfn"/>
-                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Wyh-Oi-SkV" secondAttribute="bottom" constant="534.5" id="zRe-os-Fai"/>
+                            <constraint firstItem="Gep-cN-egm" firstAttribute="trailing" secondItem="ERT-hp-Yl7" secondAttribute="trailing" id="pQP-Lc-tg4"/>
+                            <constraint firstItem="PJb-Dr-8qe" firstAttribute="top" secondItem="Wyh-Oi-SkV" secondAttribute="bottom" constant="35.5" id="sYE-MZ-4ID"/>
                         </constraints>
                     </view>
                     <connections>
@@ -385,7 +389,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6EI-qp-tmo">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="downloadCell" rowHeight="142" id="2lb-LC-Yp6" customClass="DownloadTableViewCell" customModule="Movies_App" customModuleProvider="target">
@@ -521,8 +525,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="27P-c7-2go" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Download" image="arrow.down.to.line.compact" catalog="system" id="waZ-dB-oHh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ru9-ea-RGU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ru9-ea-RGU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

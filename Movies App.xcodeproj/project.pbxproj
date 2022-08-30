@@ -205,7 +205,10 @@
 		5860A9F82881C17600BBF6AB /* Home View */ = {
 			isa = PBXGroup;
 			children = (
-				58A2024B288239BD00B71554 /* Collection Cell */,
+				5804C6E5287F95DC0028FE06 /* HomeViewController.swift */,
+				5860A9FC2881C5D400BBF6AB /* HomeTableViewCell.swift */,
+				58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */,
+				58880411288325D500A8FE91 /* HeadHomeView.swift */,
 			);
 			path = "Home View";
 			sourceTree = "<group>";
@@ -242,17 +245,6 @@
 				589BF492289E7CD400EDB3EB /* commingTableViewCell.swift */,
 			);
 			path = "Coming Soon View";
-			sourceTree = "<group>";
-		};
-		58A2024B288239BD00B71554 /* Collection Cell */ = {
-			isa = PBXGroup;
-			children = (
-				5804C6E5287F95DC0028FE06 /* HomeViewController.swift */,
-				5860A9FC2881C5D400BBF6AB /* HomeTableViewCell.swift */,
-				58A2024C28823CFE00B71554 /* HomeCollectionViewCell.swift */,
-				58880411288325D500A8FE91 /* HeadHomeView.swift */,
-			);
-			path = "Collection Cell";
 			sourceTree = "<group>";
 		};
 		58ABECBD28B637F500F1E91F /* download */ = {
