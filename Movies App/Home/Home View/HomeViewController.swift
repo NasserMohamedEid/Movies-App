@@ -81,7 +81,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header=view as?UITableViewHeaderFooterView else{return}
-        header.textLabel?.textColor = .white
+       
         header.textLabel?.font = .systemFont(ofSize: 18)
         
     }

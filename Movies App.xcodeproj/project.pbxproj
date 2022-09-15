@@ -163,6 +163,7 @@
 				58C2A2782888ABB00056A72D /* Managers */,
 				58B046D728A5586F00934A2E /* Search */,
 				5860A9F92881C19D00BBF6AB /* Coming Soon */,
+				5860A9FB2881C20900BBF6AB /* Model */,
 				5860A9F72881C15900BBF6AB /* Home */,
 				5804C6E1287F95DC0028FE06 /* AppDelegate.swift */,
 				5804C6E3287F95DC0028FE06 /* SceneDelegate.swift */,
@@ -195,7 +196,6 @@
 		5860A9F72881C15900BBF6AB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				5860A9FB2881C20900BBF6AB /* Home Model */,
 				5860A9FA2881C1DD00BBF6AB /* Home View Model */,
 				5860A9F82881C17600BBF6AB /* Home View */,
 			);
@@ -229,13 +229,13 @@
 			path = "Home View Model";
 			sourceTree = "<group>";
 		};
-		5860A9FB2881C20900BBF6AB /* Home Model */ = {
+		5860A9FB2881C20900BBF6AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				58C2A27B2888B0BF0056A72D /* MovieModel.swift */,
 				58C56A8028AA766E002F0731 /* youtubeModel.swift */,
 			);
-			path = "Home Model";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		589BF491289E7C5F00EDB3EB /* Coming Soon View */ = {
