@@ -17,31 +17,7 @@ class ViewModel {
             bindResultToHomeView()
         }
     }
-    var resultTv : [Movie]?{
-        didSet{
-            bindResultToHomeView()
-        }
-    }
-    var resultTop : [Movie]?{
-        didSet{
-            bindResultToHomeView()
-        }
-    }
-    var resultUpcoming : [Movie]?{
-        didSet{
-            bindResultToHomeView()
-        }
-    }
-    var resultPopular : [Movie]?{
-        didSet{
-            bindResultToHomeView()
-        }
-    }
-    var resultTopSearch : [Movie]?{
-        didSet{
-            bindResultToHomeView()
-        }
-    }
+   
     var resultSearch : [Movie]?{
         didSet{
             bindResultToHomeView()
@@ -63,27 +39,27 @@ class ViewModel {
     
     func getTrendingTVs(){
             APICaller.shared.getTrendingTVs { result in
-                self.resultTv=result
+                self.result=result
         }}
     
     func getTopRated(){
                 APICaller.shared.getTopRated { result in
-                    self.resultTop=result
+                    self.result=result
         }}
     
     func getUpcomingMovie(){
                     APICaller.shared.getUpcomingMovie { result in
-                        self.resultUpcoming=result
+                        self.result=result
         }}
     
     func getPopular(){
                     APICaller.shared.getPopular { result in
-                        self.resultPopular=result
+                        self.result=result
         }}
 
     func getTopSearch(){
                     APICaller.shared.getPopular { result in
-                        self.resultTopSearch=result
+                        self.result=result
         }}
     func getSearch(name:String){
         APICaller.shared.getSearch(name: name) { result in

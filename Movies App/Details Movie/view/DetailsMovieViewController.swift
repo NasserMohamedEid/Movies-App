@@ -32,8 +32,7 @@ class DetailsMovieViewController: UIViewController{
         super.viewDidLoad()
         
         overviewLable.text=movie?.overview
-        MovieName.text=movie?.original_title
-        print(movie?.title)
+        MovieName.text=movie?.original_title ?? movie?.original_name
         viewModel=ViewModel()
         viewModel.bindResultToHomeView={
                 [weak self]in
@@ -42,7 +41,7 @@ class DetailsMovieViewController: UIViewController{
                     self?.playerView.load(withVideoId:self?.viewModel.resultMovie?[0].id.videoId ?? "")
                     }
              }
-        viewModel.getMovie(name: movie?.original_title ?? "")
+        viewModel.getMovie(name: "\((movie?.original_title ?? movie?.original_name) ?? "") trailer")
     }
 
 }

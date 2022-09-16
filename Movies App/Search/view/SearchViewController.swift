@@ -22,7 +22,7 @@ title="Search"
         viewModel.bindResultToHomeView={
                 [weak self]in
                 DispatchQueue.main.async {
-                    self?.movie=(self?.viewModel.resultTopSearch!)!
+                    self?.movie=(self?.viewModel.result!)!
                 self?.searhTableView.reloadData()
                     }
              }
@@ -62,7 +62,7 @@ extension SearchViewController:UITableViewDelegate,UITableViewDataSource{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         movie=[]
         if searchText==""{
-            self.movie=self.viewModel.resultTopSearch!
+            self.movie=self.viewModel.result!
         }
         else {
             viewModel.bindResultToHomeView={

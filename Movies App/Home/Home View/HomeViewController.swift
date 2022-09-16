@@ -8,6 +8,14 @@
 import UIKit
 
 class HomeViewController: UIViewController{
+    
+    enum section:Int{
+        case trendingMovie=0
+        case TrendTV=1
+        case TopRated=2
+        case Popular=3
+        case UpComing=4
+    }
     func sendd(movie:Movie) {
        
         let secondvc=self.storyboard?.instantiateViewController(withIdentifier: "DetailsMovieViewController") as! DetailsMovieViewController
@@ -35,6 +43,7 @@ class HomeViewController: UIViewController{
         
         headViewImage.image=UIImage(named: "dune")
         homeTableViewcel=HomeTableViewCell()
+        viewModel = ViewModel()
        
     }
     
@@ -54,6 +63,28 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = homeTableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell else {return UITableViewCell()}
+        switch indexPath.section{
+        case section.trendingMovie.rawValue:
+            viewModel.getTrendingMovies()
+            
+            
+        case section.TrendTV.rawValue:
+            viewModel.getTrendingTVs()
+        case section.TopRated.rawValue:
+            viewModel.getTopRated()
+        case section.Popular.rawValue:
+            viewModel.getPopular()
+        case section.UpComing.rawValue:
+            viewModel.getUpcomingMovie()
+        default:return UITableViewCell()
+        }
+        viewModel.bindResultToHomeView={
+            [weak self]in
+            DispatchQueue.main.async {
+                cell.movies=self?.viewModel.result
+                }
+         }
+        
         cell.collectionView.tag=indexPath.section
         cell.onklick={movie in
             self.sendd(movie: movie)

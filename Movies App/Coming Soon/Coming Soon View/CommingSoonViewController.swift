@@ -27,13 +27,13 @@ class CommingSoonViewController: UIViewController {
 extension CommingSoonViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.resultUpcoming?.count ?? 0
+        return viewModel.result?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = commingTableView.dequeueReusableCell(withIdentifier: "commingCell", for: indexPath) as? commingTableViewCell else {return UITableViewCell()}
-        let url=viewModel.resultUpcoming?[indexPath.row].poster_path ?? ""
-        let name=viewModel.resultUpcoming?[indexPath.row].original_title ?? ""
+        let url=viewModel.result?[indexPath.row].poster_path ?? ""
+        let name=viewModel.result?[indexPath.row].original_title ?? ""
         cell.commingSetup(url: url, name: name)
         return cell
     }
@@ -49,7 +49,7 @@ extension CommingSoonViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondvc=self.storyboard?.instantiateViewController(withIdentifier: "DetailsMovieViewController") as! DetailsMovieViewController
-        secondvc.movie=viewModel.resultUpcoming?[indexPath.row]
+        secondvc.movie=viewModel.result?[indexPath.row]
         self.navigationController?.pushViewController(secondvc, animated: true)
     }
 }
