@@ -16,9 +16,9 @@ class DownloadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title="Download"
-                downloadTableView.dataSource=self
+        downloadTableView.dataSource=self
         downloadTableView.delegate=self
-        
+        downloadTableView.tableFooterView=UIView()
       
         
     }
@@ -48,7 +48,7 @@ extension DownloadViewController:UITableViewDelegate,UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "downloadCell", for: indexPath) as? DownloadTableViewCell else {return UITableViewCell()}
         let url=movies[indexPath.row].poster_path ?? ""
         cell.movieImage.sd_setImage(with:URL(string: "https://image.tmdb.org/t/p/w500\(url)" ))
-        cell.nameLable.text=movies[indexPath.row].original_title
+        cell.nameLable.text=movies[indexPath.row].original_title ?? movies[indexPath.row].original_name
         return cell
     }
     

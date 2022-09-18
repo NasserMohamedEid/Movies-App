@@ -18,6 +18,7 @@ class SearchViewController: UIViewController ,UISearchBarDelegate{
         super.viewDidLoad()
 title="Search"
         searchBar.delegate=self
+        searhTableView.tableFooterView=UIView()
         viewModel=ViewModel()
         viewModel.bindResultToHomeView={
                 [weak self]in
@@ -76,6 +77,9 @@ extension SearchViewController:UITableViewDelegate,UITableViewDataSource{
         }
         self.searhTableView.reloadData()
 
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
     
 }

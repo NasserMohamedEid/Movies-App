@@ -13,6 +13,9 @@ class CommingSoonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title="Comming Soon"
+        commingTableView.dataSource=self
+        commingTableView.delegate=self
+//     commingTableView.tableFooterView=UIView()
         viewModel=ViewModel()
         viewModel.bindResultToHomeView={
                 [weak self]in
@@ -20,10 +23,14 @@ class CommingSoonViewController: UIViewController {
                 self?.commingTableView.reloadData()
                     }
              }
-        viewModel.getUpcomingMovie()
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.getUpcomingMovie()
+    }
 }
+
 extension CommingSoonViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

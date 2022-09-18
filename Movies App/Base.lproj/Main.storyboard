@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XG9-9b-R15">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -156,7 +157,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vU-6u-lTK">
                                                     <rect key="frame" x="352" y="49" width="62" height="38"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="play.circle" catalog="system" title=" "/>
                                                     <connections>
                                                         <action selector="Button:" destination="4SR-ns-tGu" eventType="touchUpInside" id="OBh-pU-hnt"/>
                                                     </connections>
@@ -224,7 +225,7 @@
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="MgO-pG-moj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="120" id="DfQ-Zo-FFD" customClass="SearchTableViewCell" customModule="Movies_App" customModuleProvider="target">
@@ -238,9 +239,9 @@
                                                     <rect key="frame" x="14" y="5" width="112" height="115"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhc-Z7-EhM">
-                                                    <rect key="frame" x="364" y="41" width="45" height="43"/>
+                                                    <rect key="frame" x="360" y="41" width="49" height="43"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
+                                                    <buttonConfiguration key="configuration" style="plain" title=" " imagePadding="0.0">
                                                         <imageReference key="image" image="play.circle" catalog="system" symbolScale="large"/>
                                                     </buttonConfiguration>
                                                 </button>
@@ -254,7 +255,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Hhc-Z7-EhM" secondAttribute="trailing" constant="5" id="187-qZ-Qsj"/>
                                                 <constraint firstItem="3rg-pd-uBY" firstAttribute="top" secondItem="co2-N8-Lk2" secondAttribute="top" constant="5" id="2sO-pD-6CV"/>
-                                                <constraint firstItem="Hhc-Z7-EhM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="co2-N8-Lk2" secondAttribute="leading" symbolic="YES" id="57R-L5-Upz"/>
+                                                <constraint firstItem="Hhc-Z7-EhM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="co2-N8-Lk2" secondAttribute="leading" constant="20" symbolic="YES" id="57R-L5-Upz"/>
                                                 <constraint firstAttribute="bottom" secondItem="gGg-eq-9Fx" secondAttribute="bottom" constant="38" id="Fwh-NG-a8A"/>
                                                 <constraint firstItem="gGg-eq-9Fx" firstAttribute="top" secondItem="co2-N8-Lk2" secondAttribute="top" constant="37" id="J8g-Oa-ioe"/>
                                                 <constraint firstAttribute="trailing" secondItem="gGg-eq-9Fx" secondAttribute="trailing" constant="55" id="SrJ-oA-7Yz"/>
@@ -313,7 +314,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxe-t1-oHT">
-                                <rect key="frame" x="142" y="500" width="130" height="57"/>
+                                <rect key="frame" x="142" y="493.5" width="130" height="57"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Lwp-jn-NDi"/>
@@ -342,7 +343,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJb-Dr-8qe">
-                                <rect key="frame" x="20" y="393" width="374" height="28"/>
+                                <rect key="frame" x="20" y="393" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -353,7 +354,7 @@
                         <constraints>
                             <constraint firstItem="PJb-Dr-8qe" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" constant="20" id="ASP-Oa-5PC"/>
                             <constraint firstItem="PJb-Dr-8qe" firstAttribute="top" secondItem="8Ht-Hf-5tx" secondAttribute="top" constant="393" id="BNs-Us-4VX"/>
-                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Nxe-t1-oHT" secondAttribute="bottom" constant="305" id="CDq-Sb-871"/>
+                            <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Nxe-t1-oHT" secondAttribute="bottom" constant="10" id="CDq-Sb-871"/>
                             <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="PJb-Dr-8qe" secondAttribute="bottom" constant="453" id="E6z-26-Ou3"/>
                             <constraint firstItem="ERT-hp-Yl7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Gep-cN-egm" secondAttribute="bottom" constant="560" id="ENJ-9i-ahX"/>
                             <constraint firstItem="Wyh-Oi-SkV" firstAttribute="leading" secondItem="ERT-hp-Yl7" secondAttribute="leading" constant="20" id="Mwx-79-ZPQ"/>
@@ -523,7 +524,7 @@
         <scene sceneID="Ldl-zG-CRo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="27P-c7-2go" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Download" image="arrow.down.to.line.compact" catalog="system" id="waZ-dB-oHh"/>
+                    <tabBarItem key="tabBarItem" title="Download" image="arrow.down.to.line.alt" catalog="system" id="waZ-dB-oHh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ru9-ea-RGU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -562,7 +563,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.down.to.line.compact" catalog="system" width="128" height="128"/>
+        <image name="arrow.down.to.line.alt" catalog="system" width="128" height="128"/>
         <image name="arrowtriangle.right.circle.fill" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="imageView:5Fl-2Y-uzg:image" width="184" height="274">

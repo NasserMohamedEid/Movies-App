@@ -62,13 +62,18 @@ extension HomeTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
       
         let config=UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { result in
-            let downloadAction=UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] _ in
-                
-                let movie:Movie? = self?.movies?[indexPath.row]
-
-                self?.downloadmovie(movie: movie)
+            if #available(iOS 15.0, *) {
+                let downloadAction=UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] _ in
+                    
+                    let movie:Movie? = self?.movies?[indexPath.row]
+                    
+                    self?.downloadmovie(movie: movie)
+                }
+                return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+            } else {
+                // Fallback on earlier versions
             }
-            return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+            return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [])
         }
         
        
